@@ -1,17 +1,18 @@
-import React from 'react';
 
 
-
-function Button({ texto, HandleClick }) {
-       // function HandleClick(e) {
-       //        return
-       //        setInput(e.target.textContent);
-       // }
+function Button( { setInput } ) {
+       
+       function HandleClick(e) {
+              setInput(e.target.textContent)
+              //  console.log(e.target.textContent)
+            }
        return (
-              <button
-                     onClick={HandleClick}>
-                     {texto}
-              </button>
+              <div className='button-container'>
+              <button onClick={HandleClick}> Mountain </button>
+              <button onClick={HandleClick}> Beachs </button>
+              <button onClick={HandleClick}> Birds </button>
+              <button onClick={HandleClick}> Food </button>
+              </div>
        )
 }
 
