@@ -3,7 +3,9 @@ import axios from "axios";
 import React from "react";
 import { apiKey } from './api/config';
 import './App.css'
-// import buttom from './components/buttom';
+import Button from './components/button'
+// import Imagenes from'./components/image.js'
+// const Context = React.createContext)
 
 export default function App() {
 
@@ -13,20 +15,29 @@ export default function App() {
   const baseURL = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${input}&format=json&nojsoncallback=1`;
 
   useEffect(() => {
-    a()
-    function a() {
+    if (input !== '') {
 
       axios
         .get(baseURL)
         .then((response) => {
           setPost(response.data.photos.photo);
           // console.log(response.data.photos.photo);
-
+        }
+        )
+        .catch(err => {
+          ;
         });
     }
-  }, [baseURL]);
-// MIRARMELO
-  const imagenes  = post.map(e => (<img src={`https://live.staticflickr.com/${e.server}/${e.id}_${e.secret}.jpg`} alt="img"></img>))
+  }
+    , [input, baseURL]);
+
+
+  // MIRARMELO
+  const Imagenes = post.map((e, id) => (
+    <div key={id} className='imagen-indiv'>
+      <img src={`https://live.staticflickr.com/${e.server}/${e.id}_${e.secret}.jpg`} alt="img"></img>
+    </div>
+  ))
 
   function handleKeyPress(e) {
     let key = e.key;
@@ -41,7 +52,7 @@ export default function App() {
 
   function HandleClick(e) {
     setInput(e.target.textContent)
-    //  console.log(e.target.textContent)
+     console.log(e.target.textContent)
   }
 
   return (
@@ -53,12 +64,17 @@ export default function App() {
         <button onClick={HandleClick}>Beachs</button>
         <button onClick={HandleClick}>Birds</button>
         <button onClick={HandleClick}>Food</button>
+         <Button 
+        texto = 'Gool'
+        handleClick={HandleClick}
+        /> 
+{/* <Button handleClick={HandleClick}>Gool</Button>  */}
       </div>
       <h2 className='h2'> {input} Picture</h2>
       <div className='imagenes'>
-        { imagenes }
-        {/* <img src={`https://live.staticflickr.com/${post.server}/${post.id}_${post.secret}.jpg`} alt="img"></img> */}
+        {Imagenes}
       </div>
-    </div>
+    </div>        
+
   );
 }
