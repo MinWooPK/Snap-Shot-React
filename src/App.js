@@ -1,7 +1,4 @@
-// import { useEffect, useState } from 'react';
-// import axios from "axios";
 import React from "react";
-// import { apiKey } from './api/config';
 import './App.css';
 import Button from './components/Button.js';
 import Imagenes from './components/Imagenes';

@@ -5,18 +5,16 @@
 
 }
 
-
-
 body {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .h1 {
-  font-family: Lobster;
+  font-family: 'Lobster';
+  font-size: 60px;
 }
 
 .mother-container {
@@ -57,8 +55,12 @@ button {
 }
 
 h2 {
-
   padding-top: 20px;
+}
+
+button{
+
+font-family: 'Josefin Sans';
 
 }
 

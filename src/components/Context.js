@@ -1,5 +1,3 @@
-
-// import { createContext } from 'react';
 import { apiKey } from '../api/config'
 import React from 'react';
 import { useEffect, useState } from 'react';
@@ -24,7 +22,7 @@ function AppContext({ children }) {
                 )
         }
     }
-        , [input, baseURL]);
+        , [input]);
     return (
         <imgContext.Provider value = { {input, setInput ,post , setPost } }>
             { children }
