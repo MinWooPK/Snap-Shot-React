@@ -1,7 +1,9 @@
+import { useContext } from "react";
+import { imgContext } from "./Context";
 
 
-function Button( { setInput } ) {
-       
+function Button(  ) {
+      const { setInput }  = useContext( imgContext ); 
        function HandleClick(e) {
               setInput(e.target.textContent)
               //  console.log(e.target.textContent)

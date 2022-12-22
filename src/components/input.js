@@ -1,10 +1,19 @@
-// const [input, setInput] = useState('')
+import { useContext } from "react";
+import { imgContext } from "./Context";
 
+function Input() {
 
-// function inputValue(e) {
-//     const valueInput = e.target.value
-//     setInput(valueInput)
-//     // console.log(valueInput)
-// }
+    const { setInput } = useContext(imgContext);
+    function handleKeyPress(e) {
+        let key = e.key;
+        if (key === 'Enter') {
 
-// export default inputValue
+            setInput(e.target.value);
+            e.currentTarget.value = "";
+        }
+    }
+    return(
+    <input placeholder='search...' className='container-imagen' onKeyDown={(e) => handleKeyPress(e)} />
+    )
+}
+export default Input;
