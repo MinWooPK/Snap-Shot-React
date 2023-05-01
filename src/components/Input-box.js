@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { imgContext } from "./Context";
 
-function Input() {
+function InputBox() {
   const { setInput } = useContext(imgContext);
   function handleKeyPress(e) {
     let key = e.key;
@@ -18,4 +18,4 @@ function Input() {
     />
   );
 }
-export default Input;
+export default InputBox;
