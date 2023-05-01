@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Button from "./components/Button";
+import Button from "./components/Buttons";
 import Imagenes from "./components/Imagenes";
 import Input from "./components/Input";
 import Title from "./components/Title";
