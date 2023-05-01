@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const imgContext = React.createContext();
+// App
 export const apiKey = "056e77956224e821b7b1e9c9a826d6e8";
 
 function AppContext({ children }) {
